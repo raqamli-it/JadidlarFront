@@ -1,0 +1,34 @@
+.tabs {
+  width: 98%;
+  margin: 20px auto;
+}
+.tab_navbar {
+  display: flex;
+  position: relative;
+  border-bottom: 1px solid #ccc;
+  // overflow-x: scroll;
+  button {
+    position: relative;
+    bottom: -1px;
+    background-color: transparent;
+    border: 5px solid transparent;
+    outline: none;
+    font-size: 15px;
+    padding: 15px 25px 15px 25px;
+    cursor: pointer;
+    color: #a5a4a4;
+    font-weight: 600;
+  }
+  button.active {
+    // border: 1px solid #ccc;
+    border-bottom: 5px solid #3f4a9e;
+    transition: all 0.5s ease-out;
+    color: #3f4a9e;
+  }
+}
+
+@media (max-width: 918px) {
+  .tab_navbar {
+    overflow: scroll;
+  }
+}

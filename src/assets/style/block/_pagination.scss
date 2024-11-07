@@ -1,0 +1,49 @@
+.pagination_wrapp {
+  margin-top: 25px;
+  position: relative;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+.pagination_wrap_content {
+  // border-radius:9px;
+  position: relative;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  // border-radius: 2px;
+}
+
+.pagination_arrow {
+  cursor: pointer;
+}
+.pg_item {
+  display: inline-block;
+  position: relative;
+  padding: 13px 20px;
+  background: transparent;
+  border: 1px solid #3642ad;
+  border-radius: 9999px;
+  text-decoration: none;
+  color: #000;
+  font-size: 17px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.pg_item.active {
+  background: #3642ad;
+  color: #fff;
+}
+.pg_item:hover {
+  background: #3642ad;
+  color: #fff;
+}
+.pagination_arrow.disable {
+  color: #a8a8a8;
+}

@@ -1,0 +1,99 @@
+.lazy {
+  width: 100%;
+  display: grid;
+  height: 32vh;
+}
+
+// .text_lazy {
+//   h2 {
+//     font-style: normal;
+//     font-weight: 600;
+//     font-size: 2vw;
+//     line-height: 3.7vw;
+//     color: #223b6d;
+//   }
+// }
+
+.item__slide {
+  // padding: 10px !important;
+  height: 100%;
+
+  .item__img {
+    width: 200px;
+    height: 130px;
+    margin: 23px;
+  }
+  img {
+    width: 100%;
+    height: 100%;
+    padding: 5px;
+    object-fit: contain;
+    image-rendering: auto;
+    image-rendering: optimizeQuality;
+    image-rendering: -moz-crisp-edges; /* Firefox */
+    image-rendering: -o-crisp-edges; /* Opera */
+    image-rendering: -webkit-optimize-contrast; /* Webkit (non-standard naming) */
+    image-rendering: pixelated; /* Chrome */
+    image-rendering: optimize-contrast; /* W3C standard */
+    -ms-interpolation-mode: nearest-neighbor; /* IE (non-standard property) */
+    // padding: 0 1vw;
+    // object-position: center;
+    margin: 1vw;
+    // object-fit: cover;
+    border-radius: 2vw;
+    // -webkit-border-radius: 2vw;
+    // -moz-border-radius: 2vw;
+    // -ms-border-radius: 2vw;
+    // -o-border-radius: 2vw;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    background-color: #fff;
+  }
+}
+
+@media (max-width: 768px) {
+  .item__slide {
+    img {
+      width: 100%;
+      height: 100%;
+      margin: 1vw;
+      object-fit: contain;
+      border-radius: 2vw;
+      -webkit-border-radius: 2vw;
+      -moz-border-radius: 2vw;
+      -ms-border-radius: 2vw;
+      -o-border-radius: 2vw;
+    }
+  }
+  // .text_lazy h2 {
+  //   font-style: normal;
+  //   font-weight: 600;
+  //   font-size: 5vw;
+  //   line-height: 7.5vw;
+  //   color: #223b6d;
+  //   // text-align: center;
+  // }
+}
+
+@media (max-width: 430px) {
+  .item__slide {
+    img {
+      width: 60vw;
+      height: 40vw;
+      margin: 1vw;
+      object-fit: contain;
+      border-radius: 2vw;
+      -webkit-border-radius: 2vw;
+      -moz-border-radius: 2vw;
+      -ms-border-radius: 2vw;
+      -o-border-radius: 2vw;
+    }
+  }
+  // .text_lazy h2 {
+  //   font-style: normal;
+  //   font-weight: 600;
+  //   font-size: 5vw;
+  //   line-height: 7.5vw;
+  //   color: #223b6d;
+  //   // text-align: center;
+  // }
+}

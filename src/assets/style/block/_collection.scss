@@ -1,0 +1,11 @@
+.collectionPage-container {
+  width: 97%;
+  margin: 0 auto;
+}
+
+@media screen and (max-width:1500px) {
+  .collectionPage-container {
+    width: 85%;
+    margin: 0 auto;
+  }
+}

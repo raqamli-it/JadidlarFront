@@ -1,0 +1,45 @@
+$--main: #0e2b65;
+
+.container {
+  padding: 0 80px;
+  // display: flex;
+  // flex-direction: column;
+  // justify-content: center;
+  // width: 100%;
+  // background-repeat: no-repeat;
+  // background-image: url("../../../../img/naqw_1.jpg");
+  // gap: 100px;
+  margin: 0 auto;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+  height: 2px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 1rem;
+  background: #223b6d;
+  transition: all 0.5s ease-in-out;
+}
+
+h2 {
+  font-size: 2.2rem;
+  padding: 20px 10px 0 10px;
+  border-top: 1px solid #223b6d;
+  margin-top: 60px;
+  color: #223b6d;
+}
+
+// @media screen and (max-width: 1500px) {
+//   .container {
+//     width: 85%;
+//     margin: 0 auto;
+//   }
+// }
+@media screen and (max-width: 1500px) {
+  // .container {
+  //   width: 95%;
+  //   margin: 0 auto;
+  // }
+}

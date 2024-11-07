@@ -1,0 +1,60 @@
+.cardMaqolalar {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 30px;
+  width: 97%;
+  margin: 0 auto;
+  // flex-direction: column;
+  // justify-content: center;
+  // gap: 30px;
+  // align-items: center;
+  // background-color: aliceblue;
+  .card-maqola-item {
+    box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px,
+      rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
+    border-radius: 4px;
+    margin-bottom: 40px;
+    padding: 40px;
+    // width: 95%;
+    position: relative;
+    height: 100%;
+    max-height: max-content;
+
+    .maqola-title {
+      font-size: 18px;
+      border:none !important;
+      
+      *{
+        font-size: 18px;
+        border:none !important;
+      }
+    } 
+  
+    .maqola-author {
+      position: absolute;
+      bottom: -10px;
+      right: 50px;
+      font-size: 20px;
+      font-weight: 700;
+      border-radius: 5px;
+      background-color: #e0e4ed !important;
+      background: url("https://img.freepik.com/premium-photo/abstract-seamless-pattern-texture-with-shapes-creative-designs-backgrounds_276152-175.jpg?w=1380")
+        no-repeat center center fixed;
+
+      padding: 0 20px;
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .cardMaqolalar {
+    .card-maqola-item {
+      padding: 15px;
+      .maqola-author {
+        right: 10px;
+        font-weight: 700;
+        font-size: 18px;
+      }
+    }
+  }
+}

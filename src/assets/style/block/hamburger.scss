@@ -1,0 +1,249 @@
+/* HamburgerMenu.css */
+.hamburger-menu {
+  display: none;
+  .hamburger-icon {
+    color: #000;
+    font-size: 20px;
+    background-color: #eee;
+    border-radius: 50%;
+    padding: 10px;
+    width: 100%;
+    height: 40px;
+  }
+}
+
+aside {
+  .menu-container {
+    background-color: #fff;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    max-width: 400px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 0 15px;
+    margin: 0 auto;
+
+    .menu-flex {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 10px;
+
+      // .menu-lang {
+      //   .nav-regis {
+      //     width: 40px;
+      //     padding: 10px;
+      //     background-color: #000;
+      //     border-radius: 50px;
+      //   }
+      // }
+
+      .menu-close-btn {
+        background-color: #000;
+        border-radius: 50%;
+        color: #fff;
+        padding: 8px;
+        height: 33px;
+        border: none;
+        cursor: pointer;
+      }
+    }
+
+    .menu-items {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+
+      li {
+        padding: 5px 20px;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.media-container {
+  margin: 20px auto;
+  font-size: 14px;
+  font-weight: 600;
+  .media-nn {
+    display: none;
+    padding-bottom: 3px;
+
+    li {
+      a {
+        text-decoration: none;
+        color: #07183c;
+      }
+    }
+  }
+
+  .pt-f {
+    padding: 5.2px 0 10px 0;
+  }
+
+  .dn-top {
+    padding: 0px 5px;
+  }
+
+  .dropdown-menu {
+    color: #07183c;
+    padding: 10px 0;
+  }
+  .dropdown-menu-btn {
+    width: 92%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+
+    .dn-icon {
+      color: #5d5c5c;
+    }
+
+    .rotated {
+      transform: rotate(180deg);
+    }
+  }
+
+  .dropdown-menu-btn:hover {
+    color: #8a0b25;
+  }
+
+  .dn-content {
+    width: 96%;
+    background-color: #eee;
+    padding: 10px;
+    border-radius: 8px;
+    margin: 10px 7px 0px 7px;
+    ul {
+      li {
+        padding: 7px 5px;
+        a {
+          text-decoration: none;
+          color: #07183c;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1286px) {
+  .hamburger-menu {
+    display: flex;
+  }
+
+  .menu-container {
+    background-color: #fff;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    max-width: 400px;
+
+    .menu-flex {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+
+      .menu-close-btn {
+        background-color: #000;
+        color: #fff;
+        padding: 8px;
+        border: none;
+        cursor: pointer;
+      }
+    }
+
+    .menu-items {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      list-style: none;
+      padding: 0;
+      margin: 10px 0;
+    }
+  }
+
+  .dropdown {
+    position: relative;
+    min-width: 65px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    cursor: pointer;
+    .select {
+      color: #fff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-radius: 0.5em;
+      padding: 1em;
+      cursor: pointer;
+      transition: background 0.3s;
+
+      .caret {
+        width: 0;
+        height: 0;
+        border-left: 5px solid transparent;
+        border-right: 5px solid transparent;
+        border-top: 6px solid #fff;
+        transition: 0.3s;
+      }
+
+      .caret-rotate {
+        transform: rotate(180deg);
+      }
+    }
+
+    .select-clicked {
+      border: 2px #000 solid;
+      box-shadow: 0 0 0.8em #000;
+    }
+    .menu {
+      list-style: none;
+      padding: 0.2em 0.5em;
+      background: #eeeded;
+      box-shadow: 0 0.5em 1em rgb(0, 0, 0, 0.2);
+      border-radius: 0.5em;
+      color: $--main;
+      position: absolute;
+      top: 3em;
+      left: 50%;
+      width: 100%;
+      transform: translateX(-50%);
+      display: none;
+      opacity: 0;
+      transition: 0.2s;
+      z-index: 1;
+
+      li {
+        padding: 0.7em 0.5em;
+        margin: 0.3em 0;
+        border-radius: 0.5em;
+        cursor: pointer;
+      }
+
+      li:hover {
+        background: #2a2d35;
+        color: #fff;
+      }
+    }
+
+    .menu-open {
+      display: block;
+      opacity: 1;
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .media-container {
+    .media-nn {
+      display: block;
+    }
+  }
+}

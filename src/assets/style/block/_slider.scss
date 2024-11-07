@@ -1,0 +1,96 @@
+// Define a class for the swiper container
+.swiper-container {
+  // Ensure the swiper container itself does not clip the images
+  overflow: hidden;
+
+  // Optionally, you can specify a width and height for the swiper container
+  width: 100%;
+  height: 100%;
+
+  // Position the swiper container relative
+  position: relative;
+
+  // Style the swiper wrapper (the container of all slides)
+  .swiper-wrapper {
+    // Prevent any horizontal or vertical clipping
+    display: flex;
+    flex-wrap: nowrap;
+    overflow: hidden;
+  }
+
+  // Style each individual slide
+  .swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+    }
+  }
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  background-color: #0e2b65;
+  border-radius: 50px;
+  color: #fff;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 45%;
+}
+
+.swiper-button-prev::after {
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.swiper-button-next::after {
+  font-size: 22px;
+  font-weight: 700;
+}
+
+@media screen and (max-width: 800px) {
+  .swiper-button-prev,
+  .swiper-button-next {
+    display: none;
+  }
+}
+
+@media (max-width: 653px) {
+  .swiper-slide {
+    img {
+      max-width: 100%;
+      max-height: 100%;
+      display: block;
+    }
+  }
+}
+
+@media (max-width: 518px) {
+  .swiper-container {
+    width: 70%; /* Ensure the swiper container fills the entire width */
+  }
+  .swiper-slide {
+    img {
+      max-width: auto; /* Set the max-width of images based on the container width */
+      height: auto; /* Allow the image's height to adjust proportionally */
+      object-fit: contain;
+    }
+  }
+}
+
+// @media (max-width: 376px) {
+//   .swiper-slide {
+//     img {
+//       max-width: 100%;
+//       height: auto;
+//       object-fit: cover; /* or any other desired object-fit value */
+//     }
+//   }
+// }

@@ -1,0 +1,349 @@
+$border_radius: 50px;
+$--main: #0e2b65;
+// .register {
+// }
+.register_container {
+  position: relative;
+  top: -25px;
+  max-width: 600px;
+  width: 100%;
+  background: #fff;
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  margin: 0 10px;
+}
+
+.register_container header {
+  font-size: 30px;
+  font-weight: 500 !important;
+  background: -webkit-linear-gradient(220deg, whitesmoke, $--main, $--main);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 25px;
+}
+
+.register_container .form {
+  margin: 70px auto 0 auto;
+  width: 100%;
+}
+
+.form .input-box {
+  width: 100%;
+  margin-top: 20px;
+}
+
+.input-box label {
+  color: $--main;
+}
+
+.form :where(.input-box .form_input, .select-box) {
+  position: relative;
+  width: 100%;
+  height: 45px;
+  outline: none;
+  font-size: 1rem;
+  color: $--main;
+  margin-top: 10px;
+  border: 1px solid #ccc;
+  border-radius: 30px;
+  padding: 0 15px;
+}
+// display: flex;
+//     border-radius: 30px;
+//     border: 1px solid #ccc;
+//     color: #161212;
+//     align-items: center;
+
+//     background: transparent;
+
+.form {
+  .column {
+    display: flex;
+    gap: 12px;
+    .phone_number {
+      margin-top: 20px;
+    }
+  }
+}
+
+.form {
+  .rg_btn {
+    font-weight: 600;
+    padding: 10px 20px;
+    height: 50px;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 30px;
+    font-size: 15px;
+    color: $--main;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    background: transparent;
+    margin: 20px 0 10px 0;
+    transition: 0.4s;
+    cursor: pointer;
+  }
+  .rg_btn:hover {
+    border: 1px solid transparent;
+    color: #fff;
+  }
+  // .lg-btn:hover{
+  //   background:transparent;
+  // }
+  .rg_btn:hover::before {
+    width: 110%;
+    height: 70px;
+    padding: 10px;
+    left: -3px;
+    box-sizing: border-box;
+  }
+  .rg_btn::before {
+    content: "";
+    border-radius: 30px;
+    width: 0;
+    position: absolute;
+    height: 45px;
+    outline: none;
+    border: none;
+    left: 0px;
+    top: 0;
+    background: linear-gradient(260deg, $--main, $--main);
+    transition: 0.3s ease-out;
+    display: block;
+    z-index: -100;
+    box-sizing: border-box;
+  }
+  .hyp {
+    display: grid;
+    justify-content: center;
+    margin-top: 5px;
+  }
+}
+.form {
+  .num_div {
+    display: flex;
+    border-radius: 30px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    color: $--main;
+    align-items: center;
+    margin-top: 10px;
+    justify-content: center;
+    width: 100%;
+
+    span {
+      color: $--main;
+      font-weight: 400;
+      padding-left: 20px;
+    }
+    input {
+      width: 100%;
+      background: none;
+      border: none;
+      height: 45px;
+      color: $--main !important;
+    }
+  }
+}
+.form {
+  .pass_div {
+    display: flex;
+    border-radius: 30px;
+    border: 1px solid #ccc;
+    color: $--main !important;
+    align-items: center;
+    height: 45px;
+    margin-top: 10px;
+    input {
+      background: none;
+      border: none;
+      color: $--main !important;
+      // margin-left: -20px;
+    }
+
+    .eye_button {
+      border: none;
+      outline: none;
+      background: transparent;
+      color: $--main;
+      margin: 5px 20px 0 0;
+    }
+  }
+}
+
+.social-buttons {
+  display: grid !important;
+  align-items: center;
+  width: 100%;
+  .social-button {
+    position: relative;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 15px;
+    align-items: center;
+    background-color: #fff;
+    height: 45px;
+    transition: box-shadow 0.15 ease-in-out, background-color 0.15s ease-in-out;
+    cursor: pointer;
+    padding: 0 8px 0 52px !important;
+    color: #2d333a;
+    margin-bottom: 8px;
+    display: flex;
+    outline: 0;
+
+    .sc_logo {
+      position: absolute;
+      left: 50px;
+      top: 55%;
+      transform: translate(-50%) translateY(-50%);
+      font-size: 24px;
+    }
+
+    .sc_text {
+      text-align: left !important;
+      position: relative;
+      width: 100px !important;
+    }
+
+    img {
+      object-fit: contain;
+    }
+  }
+}
+
+button[type="button"].social-button {
+  background: transparent;
+  color: $--main;
+  border: none;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: $border_radius;
+  margin-right: 10px;
+  display: inline-block;
+  width: 100%;
+  height: 50px;
+  cursor: pointer;
+  position: relative;
+  font-size: 15px !important;
+  overflow: hidden;
+  z-index: 1;
+  transition: 0.4s;
+  font-weight: 600;
+}
+
+button[type="button"].social-button:hover {
+  border: 1px solid transparent;
+  color: #fff;
+}
+
+button[type="button"].social-button:hover::before {
+  width: 110%;
+  height: 70px;
+  padding: 10px;
+  left: -3px;
+  background: linear-gradient(260deg, $--main, $--main);
+  box-sizing: border-box;
+}
+
+.social-button::before {
+  content: "";
+  border-radius: 30px;
+  width: 0;
+  position: absolute;
+  height: 45px;
+  outline: none;
+  border: none;
+  left: 0px;
+  top: 0;
+  background: linear-gradient(260deg, $--main, $--main);
+  transition: 0.3s ease-out;
+  display: block;
+  z-index: -100;
+  box-sizing: border-box;
+}
+
+.login_bottom {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  font-weight: 400;
+
+  a {
+    font-size: 15px;
+    color: #0e2b65;
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+}
+
+// media screen
+@media screen and (max-width: 507px) {
+  .register_container {
+    background: #fff;
+    top: 5px;
+    margin: 50px 10px;
+  }
+  .form .column {
+    display: flex;
+    flex-direction: column;
+  }
+  .register_container .form {
+    margin-top: 20px;
+  }
+
+  .form .input-box {
+    width: 100%;
+    margin-top: 10px;
+  }
+  .form {
+    .column {
+      .phone_number {
+        margin-top: 15px;
+      }
+    }
+  }
+  .register_container {
+    header {
+      font-size: 29px;
+      padding: 0;
+    }
+  }
+  .register_container {
+    .form {
+      margin-top: 50px;
+    }
+  }
+  .num_div {
+    display: flex;
+    border-radius: 30px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    color: $--main;
+    align-items: center;
+    margin-top: 10px;
+    justify-content: flex-start !important;
+    width: 100%;
+
+    span {
+      color: $--main;
+      font-weight: 400;
+      padding-left: 20px;
+    }
+    input {
+      width: 100%;
+      background: none;
+      border: none;
+      height: 45px;
+    }
+  }
+}
