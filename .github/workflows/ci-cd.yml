@@ -1,39 +1,44 @@
-name: DevOps-GitHibActions
-on: push
-jobs:
-  # Build Job
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout Code
-        uses: actions/checkout@v3
-      - name: Install Node
-        uses: actions/setup-node@v3
-        with:
-          node-version: 18.x
-      - name: Install Dependencies
-        run: npm install
-      - name: Build Project
-        run: npm run build
-      - name: Upload artifact to enable deployment
-        uses: actions/upload-artifact@v3
-        with:
-          name: production-files
-          path: ./dist
-  # Deploy Job
+name: Deploy to Server
 
+on:
+  push:
+    branches:
+      - origin
+
+jobs:
   deploy:
-    needs: build
     runs-on: ubuntu-latest
+
     steps:
-      - name: Deploying to Digitalocean droplet
-        uses: appleboy/ssh-action@v0.1.4
-        with: # We set all our secrets here for the action, these won't be shown in the action logs
-          host: ${{ secrets.SSH_HOST }}
-          username: ${{ secrets.SSH_USER }}
-          password: ${{ secrets.SSH_PASSWORD }}
-          # key: ${{ secrets.SSH_KEY }}
-          port: 22
-          script: |
-            cd /var/www/subdomain.jadidlar.uz/Jadidlar-project
-            git pull
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up SSH
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan github.com >> ~/.ssh/known_hosts
+
+#      - name: Remove conflicting packages
+#        run: |
+#          sudo apt-get remove -y containerd
+#          sudo apt-get clean
+#          sudo apt-get update
+#          sudo apt-get autoremove -y
+#          sudo apt-get install -y containerd.io
+
+      - name: Build and push Docker image
+        run: |
+          docker build -t docker-test-angular .
+          docker login -u userhubdocker1 -p ${{ secrets.DOCKERHUB_TOKEN }}
+          docker tag Jadidlar-Front userhubdocker1/Jadidlar-Front
+          docker push userhubdocker1/Jadidlar-Front
+
+      - name: Disable strict host key checking
+        run: echo "StrictHostKeyChecking no" >> ~/.ssh/config
+
+      - name: SSH into server and deploy
+        run: |
+          ssh root@93.188.84.132 'docker pull userhubdocker1/Jadidlar-Front && docker run -d -p 5200:5200 userhubdocker1/Jadidlar-Front'
+          
