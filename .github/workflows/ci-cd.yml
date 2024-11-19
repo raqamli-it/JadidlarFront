@@ -37,5 +37,5 @@ jobs:
             docker pull userhubdocker1/jadidlar-front
             docker stop jadidlar-container || true
             docker rm jadidlar-container || true
-            docker run --name jadidlar-container -d -p 80:80 userhubdocker1/jadidlar-front
+            docker run --name jadidlar-container -d -p 5200:80 userhubdocker1/jadidlar-front
           EOF
