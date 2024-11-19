@@ -30,10 +30,10 @@ jobs:
 
       - name: Build and push Docker image
         run: |
-          docker build -t Jadidlar-Front .
+          docker build -t jadidlar-front .
           docker login -u userhubdocker1 -p ${{ secrets.DOCKERHUB_TOKEN }}
-          docker tag Jadidlar-Front userhubdocker1/Jadidlar-Front
-          docker push userhubdocker1/Jadidlar-Front
+          docker tag jadidlar-front userhubdocker1/jadidlar-front
+          docker push userhubdocker1/jadidlar-front
           
 
       - name: Disable strict host key checking
@@ -41,5 +41,4 @@ jobs:
 
       - name: SSH into server and deploy
         run: |
-          ssh root@93.188.84.132 'docker pull userhubdocker1/Jadidlar-Front && docker run -d -p 5200:5200 userhubdocker1/Jadidlar-Front'
-          
+          ssh root@93.188.84.132 'docker pull userhubdocker1/jadidlar-front && docker run -d -p 5200:5200 userhubdocker1/jadidlar-front'
