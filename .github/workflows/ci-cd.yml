@@ -21,7 +21,9 @@ jobs:
           docker push userhubdocker1/jadidlar-front
 
       - name: Disable strict host key checking
-        run: echo "StrictHostKeyChecking no" >> ~/.ssh/config
+        run: | 
+          mkdir -p ~/.ssh
+          echo "StrictHostKeyChecking no" >> ~/.ssh/config
 
       - name: SSH into server and deploy
         env:
