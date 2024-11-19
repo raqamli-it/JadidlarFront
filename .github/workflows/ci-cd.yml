@@ -32,7 +32,7 @@ jobs:
           mkdir -p ~/.ssh
           echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
           chmod 400 ~/.ssh/id_rsa
-          ssh -i ~/.ssh/id_rsa root@93.188.84.132 << EOF
+          ssh -i $SSH_PRIVATE_KEY root@93.188.84.132 << EOF
             docker pull userhubdocker1/jadidlar-front
             docker stop jadidlar-container || true
             docker rm jadidlar-container || true
