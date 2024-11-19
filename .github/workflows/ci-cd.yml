@@ -31,7 +31,7 @@ jobs:
       - name: Build and push Docker image
         run: |
           docker build -t jadidlar-front .
-          docker login -u userhubdocker1 --password-stdin ${{ secrets.DOCKERHUB_TOKEN }}
+          echo "${{ secrets.DOCKERHUB_TOKEN }}" | docker login -u userhubdocker1 --password-stdin
           docker tag jadidlar-front userhubdocker1/jadidlar-front
           docker push userhubdocker1/jadidlar-front
           
