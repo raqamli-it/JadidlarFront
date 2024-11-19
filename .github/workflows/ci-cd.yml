@@ -30,10 +30,11 @@ jobs:
 
       - name: Build and push Docker image
         run: |
-          docker build -t docker-test-angular .
+          docker build -t Jadidlar-Front .
           docker login -u userhubdocker1 -p ${{ secrets.DOCKERHUB_TOKEN }}
           docker tag Jadidlar-Front userhubdocker1/Jadidlar-Front
           docker push userhubdocker1/Jadidlar-Front
+          
 
       - name: Disable strict host key checking
         run: echo "StrictHostKeyChecking no" >> ~/.ssh/config
