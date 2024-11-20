@@ -1,4 +1,4 @@
-# Stage 1: Build the Node.js application
+# Stage 1: Build the Node.js application:
 FROM node:22 AS build
 
 # Set the working directory in the container
