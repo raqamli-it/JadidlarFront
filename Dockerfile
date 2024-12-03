@@ -1,6 +1,6 @@
 # Stage 1: Build the Node.js application:
 FROM node:22 AS build
-
+#test
 # Set the working directory in the container
 WORKDIR /app 
 #/usr/src/app/
