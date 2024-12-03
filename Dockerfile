@@ -2,7 +2,8 @@
 FROM node:22 AS build
 
 # Set the working directory in the container
-WORKDIR /app #/usr/src/app/
+WORKDIR /app 
+#/usr/src/app/
 
 
 # Copy package.json and yarn.lock to the working directory
