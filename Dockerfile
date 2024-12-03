@@ -2,7 +2,8 @@
 FROM node:22 AS build
 
 # Set the working directory in the container
-WORKDIR /app
+WORKDIR /app #/usr/src/app/
+
 
 # Copy package.json and yarn.lock to the working directory
 COPY package.json  ./
@@ -22,7 +23,8 @@ FROM nginx:alpine
 COPY nginx.conf /etc/nginx/conf.d/default.conf  
 
 # Copy the build output from the first stage to the Nginx HTML directory
-COPY --from=build /usr/src/app/dist /usr/share/nginx/html
+#COPY --from=build /usr/src/app/dist /usr/share/nginx/html
+COPY --from=build /app/dist /usr/share/nginx/html
 
 # Expose the port the app runs on
 EXPOSE 80
