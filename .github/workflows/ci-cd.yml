@@ -35,8 +35,8 @@ jobs:
           ssh-keyscan -H 93.188.84.132 >> ~/.ssh/known_hosts
           ssh -T -i ~/.ssh/id_rsa root@93.188.84.132 << EOF
             docker pull userhubdocker1/jadidlar-front-2
-            #docker stop jadidlar-front-container || true
-            #docker rm jadidlar-front-container || true
+            docker stop jadidlar-front-container || true
+            docker rm jadidlar-front-container || true
             docker run --name jadidlar-front-container \
               -v /home/Jadidlar/media:/app/media \
               -d -p 5200:80 userhubdocker1/jadidlar-front-2
