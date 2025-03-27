@@ -41,6 +41,7 @@ function App() {
     <>
       {/* <GoogleLogin onSuccess={responseMessage} onError={errorMessage} /> */}
       <Toaster position="top-right" />
+      {/* salom Jadidlar  */}
       <Routes>
         <Route path="/" Component={Layout}>
           <Route path="/" Component={Home} />
