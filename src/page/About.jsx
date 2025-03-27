@@ -40,7 +40,10 @@ export default function About() {
   useEffect(() => {
     fetchData1();
   }, [lang]);
+
   //apiData1
+
+  // API data
 
   return (
     <div className="container_full">
