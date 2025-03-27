@@ -34,14 +34,16 @@ function App() {
   const responseMessage = (response) => {
     console.log(response);
   };
+
   const errorMessage = (error) => {
     console.log(error);
   };
+
   return (
     <>
       {/* <GoogleLogin onSuccess={responseMessage} onError={errorMessage} /> */}
       <Toaster position="top-right" />
-      {/* salom Jadidlar  */}
+      {/* salom  */}
       <Routes>
         <Route path="/" Component={Layout}>
           <Route path="/" Component={Home} />
