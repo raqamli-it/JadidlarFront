@@ -5,11 +5,13 @@ export default function Search({ onSearch }) {
     e.preventDefault();
     onSearch(document.getElementById("search_id").value);
   };
+
   const onSearchCleareChage = (data) => {
     if (data == "") {
       onSearch("");
     }
   };
+
   return (
     <form onSubmit={onSubmit} className="mini_search_container">
       <div className="mini_search_container_content">

@@ -22,6 +22,7 @@ export default function About() {
     // console.log(response);
     setApiData(response);
   };
+
   useEffect(() => {
     fetchData();
   }, [lang]);
@@ -29,11 +30,13 @@ export default function About() {
 
   // bu qism ishtirokchilar api lar bilan ishlash uchun
   const [apiData1, setApiData1] = useState();
+
   const fetchData1 = async () => {
     const response = await DataService.get(endpoints.ishtirokchilar);
     console.log(response, "ishtirokchi");
     setApiData1(response);
   };
+
   useEffect(() => {
     fetchData1();
   }, [lang]);
@@ -45,15 +48,16 @@ export default function About() {
       {apiData ? (
         <div className="about_detail">
           {apiData?.results?.map((about) => (
-            <div className="about_card">
-              <div className="about_img">
-                <img className="about_image" src={about.image} />
-              </div>
-              <div className="about_title">
-                <h1>{about.title}</h1>
-                {/* <span>({brYear} - {dyYear})</span> */}
-                <div className="about_describtion">
-                  <p dangerouslySetInnerHTML={{ __html: about.text }}></p>
+            <div>
+              <h1>{about.title}</h1>
+              <div className="about_card">
+                <div className="about_img">
+                  <img className="about_image" src={about.image} />
+                </div>
+                <div className="about_title">
+                  <div className="about_describtion">
+                    <p dangerouslySetInnerHTML={{ __html: about.text }}></p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -75,6 +79,7 @@ export default function About() {
                     <h4>{ishtirikchilar.fullname}</h4>
 
                     <p>{ishtirikchilar.position}</p>
+                    <p>{ishtirikchilar.degree}</p>
                   </div>
                 </div>
               ))}

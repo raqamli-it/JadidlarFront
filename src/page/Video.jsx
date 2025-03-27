@@ -25,17 +25,20 @@ const Video = () => {
   useEffect(() => {
     fetchData();
   }, []);
+  
   const onChangeId = (id) => {
     setActiveId(id);
     navigate(`/koʻruvlar/${id}`);
     setVideo();
   };
+
   const fetchVideo = async () => {
     const response = await DataService.get(
       endpoints.videoById(activeId ?? route.id)
     ); //endpoint o'zgartirilsin  endpoindi tayyor
     setFistData(response);
   };
+  
   useEffect(() => {
     fetchVideo();
   }, [activeId, route.id]);

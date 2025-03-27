@@ -7,12 +7,18 @@ $--second: #6b1324;
 }
 
 .about_detail {
-  min-height: 500px;
+  min-height: 450px;
+  h1 {
+    font-size: 2.2rem;
+    line-height: 2.25rem;
+    color: #1e3769;
+    text-align: center;
+  }
 }
 
 .about_img {
   float: left;
-  margin: 3rem 30px 20px 0;
+  margin: 0 30px 20px 0;
 
   .about_image {
     width: 100%;
@@ -21,14 +27,6 @@ $--second: #6b1324;
 }
 
 .about_title {
-  padding-top: 2rem;
-
-  h1 {
-    font-size: 2.2rem;
-    line-height: 2.25rem;
-    color: #1e3769;
-  }
-
   span {
     padding-bottom: 1rem;
     font-weight: 600;
@@ -37,22 +35,22 @@ $--second: #6b1324;
   }
 
   .about_describtion {
-    padding-bottom: 3rem;
-
     p {
       color: #111827;
       font-size: 1em;
       font-weight: 600;
       line-height: 1.6;
       margin-bottom: 0.6em;
-      margin-top: 1.6em;
       text-align: justify;
     }
   }
 }
 
 .people_box_card {
-  padding: 15px 0.5%;
+  padding: 0 0.5% 15px;
+  h2 {
+    margin: 0;
+  }
 }
 
 .people_container {
@@ -87,7 +85,7 @@ $--second: #6b1324;
 
     .people_content {
       padding: 10px 20px;
-      text-align: left;
+      text-align: center;
       letter-spacing: 0.2px;
 
       h4 {
@@ -95,8 +93,7 @@ $--second: #6b1324;
         margin-top: 0;
         font-weight: 600;
         font-size: 1.2rem;
-        height: 50px;
-        margin-bottom: 10px;
+        height: 30px;
       }
 
       p {
@@ -104,7 +101,10 @@ $--second: #6b1324;
         font-weight: 600;
         font-size: 1rem;
         line-height: 1.4;
-        margin-bottom: 20px;
+      }
+
+      p:last-child {
+        margin-bottom: 10px;
       }
     }
   }
